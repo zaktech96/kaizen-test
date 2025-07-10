@@ -4,13 +4,15 @@ import { Github, Menu, X, Loader2 } from "lucide-react";
 import React, { useCallback, useState } from "react";
 import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
+import { ThemeToggle } from "~/components/ui/toggle";
 import { cn } from "~/lib/utils";
 import { config, isFeatureEnabled } from "../../../config";
 
-const getMenuItems = () => {
+  const getMenuItems = () => {
   const items = [
   { name: "Home", href: "#hero" },
   { name: "Features", href: "#features" },
+  { name: "Menu", href: "/menu" },
   ];
 
   // Only show pricing if payments are enabled
@@ -60,6 +62,9 @@ export const Navbar = ({
           block: "start",
         });
       }
+    } else if (href.startsWith("/")) {
+      // For route links, let React Router handle navigation
+      return;
     }
     setMenuState(false); // Close mobile menu
   }, []);
@@ -90,11 +95,19 @@ export const Navbar = ({
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12 relative",
             isScrolled &&
               "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5 shadow-lg"
           )}
         >
+          {/* Sticky Coffee Emoji - Far Left */}
+          <div className="absolute -left-24 top-1/2 transform -translate-y-1/2 text-6xl opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer group animate-bounce">
+            ☕
+            {/* Steam effect */}
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="text-white text-xs animate-bounce">💨</div>
+            </div>
+          </div>
           {/* Temporary debug indicator */}
           {/* <div className="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 text-xs z-10">
             Debug: {isScrolled ? 'SCROLLED' : 'NOT SCROLLED'}
@@ -104,10 +117,13 @@ export const Navbar = ({
               <Link
                 to="/"
                 aria-label="home"
-                className="flex items-center space-x-2 font-semibold text-xl text-muted-foreground"
+                className="flex items-center space-x-2 font-semibold text-2xl text-muted-foreground"
                 prefetch="viewport"
               >
-                <img src="/kaizen-no-bg.png" alt="Kaizen Logo" className="w-18 h-18" />
+                <div className="flex items-center space-x-2">
+                  <div className="text-3xl">🫘</div>
+                  <span>Brew & Beans</span>
+                </div>
               </Link>
 
               <button
@@ -124,12 +140,22 @@ export const Navbar = ({
               <ul className="flex gap-8 text-sm">
                 {menuItems.map((item, index) => (
                   <li key={index}>
-                    <div
-                      onClick={() => handleNavClick(item.href)}
-                      className="hover:cursor-pointer text-muted-foreground block duration-150 transition-colors"
-                    >
-                      <span>{item.name}</span>
-                    </div>
+                    {item.href.startsWith("/") ? (
+                      <Link
+                        to={item.href}
+                        prefetch="intent"
+                        className="hover:cursor-pointer text-muted-foreground block duration-150 transition-colors"
+                      >
+                        <span>{item.name}</span>
+                      </Link>
+                    ) : (
+                      <div
+                        onClick={() => handleNavClick(item.href)}
+                        className="hover:cursor-pointer text-muted-foreground block duration-150 transition-colors"
+                      >
+                        <span>{item.name}</span>
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -140,25 +166,37 @@ export const Navbar = ({
                 <ul className="space-y-6 text-base">
                   {menuItems.map((item, index) => (
                     <li key={index}>
-                      <button
-                        onClick={() => handleNavClick(item.href)}
-                        className="text-muted-foreground hover:cursor-pointer  block duration-150 transition-colors w-full text-left"
-                      >
-                        <span>{item.name}</span>
-                      </button>
+                      {item.href.startsWith("/") ? (
+                        <Link
+                          to={item.href}
+                          prefetch="intent"
+                          className="text-muted-foreground hover:cursor-pointer block duration-150 transition-colors w-full text-left"
+                          onClick={() => setMenuState(false)}
+                        >
+                          <span>{item.name}</span>
+                        </Link>
+                      ) : (
+                        <button
+                          onClick={() => handleNavClick(item.href)}
+                          className="text-muted-foreground hover:cursor-pointer  block duration-150 transition-colors w-full text-left"
+                        >
+                          <span>{item.name}</span>
+                        </button>
+                      )}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Link
-                  to="https://github.com/ObaidUr-Rahmaan/kaizen"
+                  to="https://github.com/zaktech96/kaizen-test"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center"
                 >
                   <Github className="w-5 h-5" />
                 </Link>
+                <ThemeToggle />
                 {authEnabled && loaderData?.isSignedIn ? (
                   <div className="flex items-center gap-3">
                     <Button 

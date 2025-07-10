@@ -15,10 +15,10 @@ export default function IntegrationsSection({
   return (
     <section id="hero" className="relative overflow-hidden">
       <Navbar loaderData={loaderData} />
-      <div className="bg-gradient-to-br from-slate-50 via-white to-stone-50/80 dark:from-gray-900 dark:via-gray-800/60 dark:to-gray-850/80 py-32 md:py-40 relative">
+      <div className="bg-gradient-to-br from-slate-50 via-white to-stone-50/80 dark:from-slate-900 dark:via-stone-900 dark:to-slate-800 py-32 md:py-40 relative">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 text-6xl animate-bounce opacity-[0.03] dark:opacity-[0.08]">☕</div>
+
           <div className="absolute top-32 right-20 text-4xl animate-pulse opacity-[0.03] dark:opacity-[0.08] animation-delay-1000">🫘</div>
           <div className="absolute bottom-20 left-32 text-5xl animate-bounce opacity-[0.03] dark:opacity-[0.08] animation-delay-2000">☕</div>
           <div className="absolute bottom-40 right-10 text-3xl animate-pulse opacity-[0.03] dark:opacity-[0.08] animation-delay-500">🫘</div>
@@ -26,7 +26,7 @@ export default function IntegrationsSection({
         </div>
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50/30 dark:via-slate-800/30 to-transparent"></div>
         
         <div className="flex justify-center mb-12 relative z-10">
           <Badge className="inline-flex items-center gap-3 bg-gradient-to-r from-slate-800 to-stone-900 dark:from-slate-100 dark:to-stone-50 text-white dark:text-stone-900 border-0 px-8 py-3 text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm">
@@ -43,9 +43,6 @@ export default function IntegrationsSection({
             {/* Interactive Coffee Cards */}
             <div className="relative mx-auto w-fit order-2 lg:order-1">
               <div className="mx-auto mb-4 flex w-fit justify-center gap-3">
-                <CoffeeCard className="animate-float">
-                  <div className="text-stone-600 dark:text-stone-400 text-3xl">☕</div>
-                </CoffeeCard>
                 <CoffeeCard className="animate-float animation-delay-200">
                   <div className="text-stone-500 dark:text-stone-500 text-3xl">⭐</div>
                 </CoffeeCard>
@@ -79,13 +76,13 @@ export default function IntegrationsSection({
             <div className="space-y-8 text-center lg:text-left order-1 lg:order-2">
               <div className="space-y-6">
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight">
-                  <span className="bg-gradient-to-br from-slate-900 via-stone-800 to-slate-900 dark:from-slate-100 dark:via-stone-50 dark:to-slate-100 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-br from-slate-900 via-stone-800 to-slate-900 dark:from-amber-200 dark:via-orange-100 dark:to-amber-200 bg-clip-text text-transparent">
                     Brew & Beans
                   </span>
                 </h1>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-stone-600 dark:text-stone-400 leading-relaxed">
                   Transform Your Daily Coffee Ritual Into an{' '}
-                  <em className="bg-gradient-to-r from-stone-800 to-slate-700 dark:from-stone-200 dark:to-slate-300 bg-clip-text text-transparent font-medium not-italic">
+                  <em className="bg-gradient-to-r from-stone-800 to-slate-700 dark:from-amber-300 dark:to-orange-200 bg-clip-text text-transparent font-medium not-italic">
                     Extraordinary Experience
                   </em>
                 </h2>
@@ -121,7 +118,7 @@ export default function IntegrationsSection({
               <div className="flex gap-4 justify-center lg:justify-start flex-wrap">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-slate-900 via-stone-900 to-slate-800 hover:from-slate-800 hover:via-stone-800 hover:to-slate-700 dark:from-slate-100 dark:via-stone-50 dark:to-slate-100 dark:hover:from-white dark:hover:via-slate-50 dark:hover:to-white text-white dark:text-stone-900 border-0 px-10 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                  className="bg-gradient-to-r from-slate-900 via-stone-900 to-slate-800 hover:from-slate-800 hover:via-stone-800 hover:to-slate-700 dark:from-amber-600 dark:via-orange-700 dark:to-amber-600 dark:hover:from-amber-700 dark:hover:via-orange-800 dark:hover:to-amber-700 text-white border-0 px-10 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
                 >
                   <Link to="/order-now" className="flex items-center gap-3">
                     <span className="group-hover:rotate-12 transition-transform duration-300">→</span>
@@ -132,10 +129,10 @@ export default function IntegrationsSection({
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-2 border-transparent bg-gradient-to-r from-stone-300/50 to-slate-300/50 dark:from-stone-600/50 dark:to-slate-600/50 hover:from-stone-200 hover:to-slate-200 dark:hover:from-stone-700 dark:hover:to-slate-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 px-10 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 group backdrop-blur-sm"
+                  className="border-2 border-stone-300 dark:border-amber-600 bg-gradient-to-r from-stone-100/50 to-slate-100/50 dark:from-stone-800/50 dark:to-slate-800/50 hover:from-stone-200 hover:to-slate-200 dark:hover:from-stone-700 dark:hover:to-slate-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 px-10 py-4 text-lg font-semibold rounded-full transition-all duration-200 hover:scale-105 group backdrop-blur-sm will-change-transform"
                 >
-                  <Link to="/menu" className="flex items-center gap-3">
-                    <span className="group-hover:rotate-12 transition-transform duration-300">📖</span>
+                  <Link to="/menu" prefetch="intent" className="flex items-center gap-3">
+                    <span className="group-hover:rotate-12 transition-transform duration-200">📖</span>
                     <span>Explore Menu</span>
                   </Link>
                 </Button>
