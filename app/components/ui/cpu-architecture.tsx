@@ -165,6 +165,34 @@ export const CpuArchitecture = ({
           fill="url(#cpu-rose-grad)"
         />
       </g>
+      
+      {/* Coffee Process Labels */}
+      <g>
+        {/* 1. Beans (top left) */}
+        <text x="10" y="15" fontSize="5" fill="currentColor" fontWeight="500">🫘 Beans</text>
+        
+        {/* 2. Grind (top right) */}
+        <text x="160" y="8" fontSize="5" fill="currentColor" fontWeight="500">⚙️ Grind</text>
+        
+        {/* 3. Water (right) */}
+        <text x="135" y="18" fontSize="5" fill="currentColor" fontWeight="500">💧 Water</text>
+        
+        {/* 4. Heat (bottom right) */}
+        <text x="165" y="85" fontSize="5" fill="currentColor" fontWeight="500">🔥 Heat</text>
+        
+        {/* 5. Brew (bottom center) */}
+        <text x="145" y="92" fontSize="5" fill="currentColor" fontWeight="500">⏱️ Brew</text>
+        
+        {/* 6. Steam (bottom) */}
+        <text x="90" y="98" fontSize="5" fill="currentColor" fontWeight="500">💨 Steam</text>
+        
+        {/* 7. Filter (bottom left) */}
+        <text x="65" y="90" fontSize="5" fill="currentColor" fontWeight="500">📄 Filter</text>
+        
+        {/* 8. Milk (left) */}
+        <text x="25" y="28" fontSize="5" fill="currentColor" fontWeight="500">🥛 Milk</text>
+      </g>
+      
       {/* CPU Box */}
       <g>
         {/* Cpu connections */}
@@ -222,23 +250,29 @@ export const CpuArchitecture = ({
             />
           </g>
         )}
-        {/* Main CPU Rectangle */}
-        <rect
-          x="85"
-          y="40"
-          width="30"
-          height="20"
-          rx="2"
-          fill="#181818"
+        {/* Coffee Cup */}
+        <circle
+          cx="100"
+          cy="50"
+          r="15"
+          fill="#8B4513"
           filter="url(#cpu-light-shadow)"
         />
-        {/* CPU Text */}
+        {/* Cup Interior */}
+        <circle
+          cx="100"
+          cy="50"
+          r="12"
+          fill="#3E2723"
+        />
+        {/* Coffee Cup Text */}
         <text
-          x="92"
-          y="52.5"
-          fontSize="7"
-          fill={animateText ? "url(#cpu-text-gradient)" : "white"}
+          x="100"
+          y="54"
+          fontSize="12"
+          fill="white"
           fontWeight="600"
+          textAnchor="middle"
           letterSpacing="0.05em"
         >
           {text}
