@@ -8,11 +8,11 @@ import { ThemeToggle } from "~/components/ui/toggle";
 import { cn } from "~/lib/utils";
 import { config, isFeatureEnabled } from "../../../config";
 
-  const getMenuItems = () => {
+const getMenuItems = () => {
   const items = [
-  { name: "Home", href: "#hero" },
-  { name: "Features", href: "#features" },
-  { name: "Menu", href: "/menu" },
+    { name: "Home", href: "#hero" },
+    { name: "Features", href: "#features" },
+    { name: "Menu", href: "/menu" },
   ];
 
   // Only show pricing if payments are enabled
@@ -91,38 +91,36 @@ export const Navbar = ({
     <header>
       <nav
         data-state={menuState && "active"}
-        className="fixed z-50 w-full px-2"
+        className="fixed z-50 w-full px-2 sm:px-4"
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12 relative",
+            "mx-auto mt-2 max-w-6xl px-4 sm:px-6 lg:px-12 transition-all duration-300 relative",
             isScrolled &&
-              "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5 shadow-lg"
+              "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg shadow-lg"
           )}
         >
-          {/* Sticky Coffee Emoji - Far Left */}
-          <div className="absolute -left-24 top-1/2 transform -translate-y-1/2 text-6xl opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer group animate-bounce">
+          {/* Sticky Coffee Emoji - Hide on small screens */}
+          <div className="absolute -left-16 sm:-left-20 lg:-left-24 top-1/2 transform -translate-y-1/2 text-4xl sm:text-5xl lg:text-6xl opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer group animate-bounce hidden sm:block">
             ☕
             {/* Steam effect */}
             <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
               <div className="text-white text-xs animate-bounce">💨</div>
             </div>
           </div>
-          {/* Temporary debug indicator */}
-          {/* <div className="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 text-xs z-10">
-            Debug: {isScrolled ? 'SCROLLED' : 'NOT SCROLLED'}
-          </div> */}
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+
+          <div className="relative flex flex-wrap items-center justify-between gap-4 sm:gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
                 to="/"
                 aria-label="home"
-                className="flex items-center space-x-2 font-semibold text-2xl text-muted-foreground"
+                className="flex items-center space-x-2 font-semibold text-xl sm:text-2xl text-muted-foreground"
                 prefetch="viewport"
               >
                 <div className="flex items-center space-x-2">
-                  <div className="text-3xl">🫘</div>
-                  <span>Brew & Beans</span>
+                  <div className="text-2xl sm:text-3xl">🫘</div>
+                  <span className="hidden sm:inline">Brew & Beans</span>
+                  <span className="sm:hidden">B&B</span>
                 </div>
               </Link>
 
@@ -131,27 +129,33 @@ export const Navbar = ({
                 aria-label={menuState == true ? "Close Menu" : "Open Menu"}
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
-                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                <Menu className={cn(
+                  "m-auto size-6 duration-200 transition-all",
+                  menuState && "rotate-180 scale-0 opacity-0"
+                )} />
+                <X className={cn(
+                  "absolute inset-0 m-auto size-6 duration-200 transition-all",
+                  menuState ? "rotate-0 scale-100 opacity-100" : "-rotate-180 scale-0 opacity-0"
+                )} />
               </button>
             </div>
 
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-              <ul className="flex gap-8 text-sm">
+              <ul className="flex gap-6 xl:gap-8 text-sm">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     {item.href.startsWith("/") ? (
                       <Link
                         to={item.href}
                         prefetch="intent"
-                        className="hover:cursor-pointer text-muted-foreground block duration-150 transition-colors"
+                        className="hover:cursor-pointer text-muted-foreground block duration-150 transition-colors hover:text-foreground"
                       >
                         <span>{item.name}</span>
                       </Link>
                     ) : (
                       <div
                         onClick={() => handleNavClick(item.href)}
-                        className="hover:cursor-pointer text-muted-foreground block duration-150 transition-colors"
+                        className="hover:cursor-pointer text-muted-foreground block duration-150 transition-colors hover:text-foreground"
                       >
                         <span>{item.name}</span>
                       </div>
@@ -161,16 +165,20 @@ export const Navbar = ({
               </ul>
             </div>
 
-            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+            <div className={cn(
+              "mb-6 hidden w-full flex-wrap items-center justify-end space-y-6 sm:space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-4 xl:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent",
+              "bg-background/95 backdrop-blur-xl",
+              menuState && "in-data-[state=active]:block lg:in-data-[state=active]:flex"
+            )}>
               <div className="lg:hidden">
-                <ul className="space-y-6 text-base">
+                <ul className="space-y-4 sm:space-y-6 text-base">
                   {menuItems.map((item, index) => (
                     <li key={index}>
                       {item.href.startsWith("/") ? (
                         <Link
                           to={item.href}
                           prefetch="intent"
-                          className="text-muted-foreground hover:cursor-pointer block duration-150 transition-colors w-full text-left"
+                          className="text-muted-foreground hover:text-foreground hover:cursor-pointer block duration-150 transition-colors w-full text-left py-2"
                           onClick={() => setMenuState(false)}
                         >
                           <span>{item.name}</span>
@@ -178,7 +186,7 @@ export const Navbar = ({
                       ) : (
                         <button
                           onClick={() => handleNavClick(item.href)}
-                          className="text-muted-foreground hover:cursor-pointer  block duration-150 transition-colors w-full text-left"
+                          className="text-muted-foreground hover:text-foreground hover:cursor-pointer block duration-150 transition-colors w-full text-left py-2"
                         >
                           <span>{item.name}</span>
                         </button>
@@ -192,7 +200,7 @@ export const Navbar = ({
                   to="https://github.com/zaktech96/kaizen-test"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center"
+                  className="flex items-center justify-center p-2 hover:bg-muted rounded-md transition-colors"
                 >
                   <Github className="w-5 h-5" />
                 </Link>
@@ -217,12 +225,15 @@ export const Navbar = ({
                     <UserButton />
                   </div>
                 ) : authEnabled ? (
-                  <>
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                     <Button
                       asChild
                       variant="outline"
                       size="sm"
-                      className={cn(isScrolled && "lg:hidden")}
+                      className={cn(
+                        "w-full sm:w-auto",
+                        isScrolled && "lg:hidden"
+                      )}
                     >
                       <Link to="/sign-in" prefetch="viewport">
                         <span>Login</span>
@@ -231,7 +242,10 @@ export const Navbar = ({
                     <Button
                       asChild
                       size="sm"
-                      className={cn(isScrolled && "lg:hidden")}
+                      className={cn(
+                        "w-full sm:w-auto",
+                        isScrolled && "lg:hidden"
+                      )}
                     >
                       <Link to="/sign-up" prefetch="viewport">
                         <span>Sign Up</span>
@@ -240,7 +254,10 @@ export const Navbar = ({
                     <Button
                       asChild
                       size="sm"
-                      className={cn(isScrolled ? "lg:inline-flex" : "hidden", "min-w-[90px]")}
+                      className={cn(
+                        "w-full sm:w-auto min-w-[90px]",
+                        isScrolled ? "lg:inline-flex" : "hidden"
+                      )}
                       disabled={isDashboardLoading}
                       onClick={handleDashboardClick}
                     >
@@ -252,15 +269,14 @@ export const Navbar = ({
                         )}
                       </Link>
                     </Button>
-                  </>
+                  </div>
                 ) : (
-                  // When auth is disabled, show a simple get started button
                   <Button
                     asChild
                     size="sm"
+                    className="w-full sm:w-auto min-w-[90px]"
                     disabled={isDashboardLoading}
                     onClick={handleDashboardClick}
-                    className="min-w-[90px]"
                   >
                     <Link to={dashboardLink} prefetch="viewport">
                       {isDashboardLoading ? (

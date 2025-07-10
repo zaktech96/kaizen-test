@@ -289,71 +289,71 @@ export default function MenuPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 text-6xl animate-bounce opacity-[0.03] dark:opacity-[0.15] will-change-transform">☕</div>
-          <div className="absolute top-32 right-20 text-4xl animate-pulse opacity-[0.03] dark:opacity-[0.15] will-change-opacity">🫘</div>
-          <div className="absolute bottom-20 left-32 text-5xl animate-bounce opacity-[0.03] dark:opacity-[0.15] will-change-transform">☕</div>
-          <div className="absolute bottom-40 right-10 text-3xl animate-pulse opacity-[0.03] dark:opacity-[0.15] will-change-opacity">🫘</div>
-          <div className="absolute top-60 left-1/2 text-4xl animate-bounce opacity-[0.03] dark:opacity-[0.15] will-change-transform" style={{ animationDelay: '1s' }}>☕</div>
-          <div className="absolute top-40 right-1/3 text-3xl animate-pulse opacity-[0.03] dark:opacity-[0.15] will-change-opacity" style={{ animationDelay: '2s' }}>🫘</div>
+          <div className="absolute top-10 left-10 text-4xl sm:text-5xl md:text-6xl animate-bounce opacity-[0.03] dark:opacity-[0.15] will-change-transform">☕</div>
+          <div className="absolute top-32 right-20 text-2xl sm:text-3xl md:text-4xl animate-pulse opacity-[0.03] dark:opacity-[0.15] will-change-opacity">🫘</div>
+          <div className="absolute bottom-20 left-32 text-3xl sm:text-4xl md:text-5xl animate-bounce opacity-[0.03] dark:opacity-[0.15] will-change-transform">☕</div>
+          <div className="absolute bottom-40 right-10 text-2xl sm:text-3xl animate-pulse opacity-[0.03] dark:opacity-[0.15] will-change-opacity">🫘</div>
+          <div className="absolute top-60 left-1/2 text-2xl sm:text-3xl md:text-4xl animate-bounce opacity-[0.03] dark:opacity-[0.15] will-change-transform" style={{ animationDelay: '1s' }}>☕</div>
+          <div className="absolute top-40 right-1/3 text-2xl sm:text-3xl animate-pulse opacity-[0.03] dark:opacity-[0.15] will-change-opacity" style={{ animationDelay: '2s' }}>🫘</div>
         </div>
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50/30 dark:via-slate-800/30 to-transparent"></div>
         
-        <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-          <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-slate-800 to-stone-900 dark:from-amber-600 dark:to-orange-700 text-white px-8 py-3 mb-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 backdrop-blur-sm will-change-transform">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <Badge className="bg-gradient-to-r from-slate-800 to-stone-900 dark:from-amber-600 dark:to-orange-700 text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 mb-6 sm:mb-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 backdrop-blur-sm will-change-transform">
               <span className="mr-2">☕</span>
-              <span>Handcrafted Daily - Fresh Roasted Beans</span>
+              <span className="text-sm sm:text-base">Handcrafted Daily - Fresh Roasted Beans</span>
             </Badge>
             
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 leading-tight px-4">
               <span className="bg-gradient-to-br from-slate-900 via-stone-800 to-slate-900 dark:from-amber-200 dark:via-orange-100 dark:to-amber-200 bg-clip-text text-transparent">
                 Our Coffee Menu
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-stone-600 dark:text-stone-300 max-w-4xl mx-auto font-light leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-stone-600 dark:text-stone-300 max-w-4xl mx-auto font-light leading-relaxed px-4">
               From bold espressos to creamy lattes - every cup tells a story of passion, quality, and craftsmanship
             </p>
             
             {/* Coffee Quality Indicators */}
-            <div className="flex items-center justify-center gap-8 mt-8 flex-wrap">
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-stone-800/80 rounded-full backdrop-blur-sm">
-                <span className="text-2xl">🌱</span>
-                <span className="text-sm font-medium text-stone-700 dark:text-stone-300">Single Origin</span>
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 mt-8 sm:mt-12 px-4">
+              <div className="flex items-center gap-2 bg-gradient-to-r from-white/60 to-slate-50/60 dark:from-slate-800/60 dark:to-stone-800/60 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-sm">
+                <Star className="text-amber-500 w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm font-medium text-stone-700 dark:text-stone-300">Single Origin</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-stone-800/80 rounded-full backdrop-blur-sm">
-                <span className="text-2xl">🔥</span>
-                <span className="text-sm font-medium text-stone-700 dark:text-stone-300">Fresh Roasted</span>
+              <div className="flex items-center gap-2 bg-gradient-to-r from-white/60 to-slate-50/60 dark:from-slate-800/60 dark:to-stone-800/60 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-sm">
+                <Flame className="text-red-500 w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm font-medium text-stone-700 dark:text-stone-300">Fresh Roasted</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-stone-800/80 rounded-full backdrop-blur-sm">
-                <span className="text-2xl">👨‍🍳</span>
-                <span className="text-sm font-medium text-stone-700 dark:text-stone-300">Expert Baristas</span>
+              <div className="flex items-center gap-2 bg-gradient-to-r from-white/60 to-slate-50/60 dark:from-slate-800/60 dark:to-stone-800/60 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-sm">
+                <Leaf className="text-green-500 w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm font-medium text-stone-700 dark:text-stone-300">Organic</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Menu Categories */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-6 max-w-7xl">
+      {/* Menu Section */}
+      <section className="py-12 sm:py-16 lg:py-20 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
             {/* Category Navigation */}
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 bg-gradient-to-br from-white via-slate-50/80 to-stone-50 dark:from-slate-800/80 dark:via-stone-800/80 dark:to-slate-700/80 backdrop-blur-xl p-2 rounded-2xl shadow-lg mb-12">
+            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 bg-gradient-to-br from-white via-slate-50/80 to-stone-50 dark:from-slate-800/80 dark:via-stone-800/80 dark:to-slate-700/80 backdrop-blur-xl p-2 sm:p-3 rounded-2xl shadow-lg mb-8 sm:mb-12">
               {menuCategories.map((category) => (
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
-                  className="flex flex-col items-center gap-2 py-4 px-6 rounded-xl text-sm font-semibold transition-all duration-200 hover:scale-105 data-[state=active]:bg-gradient-to-r data-[state=active]:from-slate-900 data-[state=active]:via-stone-900 data-[state=active]:to-slate-800 data-[state=active]:text-white data-[state=active]:shadow-lg text-stone-700 hover:text-stone-900 dark:text-stone-300 dark:hover:text-stone-200 dark:data-[state=active]:from-amber-600 dark:data-[state=active]:via-orange-700 dark:data-[state=active]:to-amber-600 will-change-transform"
+                  className="flex flex-col items-center gap-1 sm:gap-2 py-3 sm:py-4 px-2 sm:px-4 lg:px-6 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 hover:scale-105 data-[state=active]:bg-gradient-to-r data-[state=active]:from-slate-900 data-[state=active]:via-stone-900 data-[state=active]:to-slate-800 data-[state=active]:text-white data-[state=active]:shadow-lg text-stone-700 hover:text-stone-900 dark:text-stone-300 dark:hover:text-stone-200 dark:data-[state=active]:from-amber-600 dark:data-[state=active]:via-orange-700 dark:data-[state=active]:to-amber-600 will-change-transform"
                 >
-                  <span className="text-2xl">{category.icon}</span>
-                  <span>{category.label}</span>
-                  <Badge variant="secondary" className="text-xs bg-gradient-to-r from-stone-200 to-slate-200 dark:from-stone-700 dark:to-slate-700 text-stone-700 dark:text-stone-300">
-                    {category.count} items
+                  <span className="text-xl sm:text-2xl">{category.icon}</span>
+                  <span className="text-center leading-tight">{category.label}</span>
+                  <Badge variant="secondary" className="text-xs bg-gradient-to-r from-stone-200 to-slate-200 dark:from-stone-700 dark:to-slate-700 text-stone-700 dark:text-stone-300 px-2 py-0.5">
+                    {category.count}
                   </Badge>
                 </TabsTrigger>
               ))}
@@ -361,11 +361,11 @@ export default function MenuPage() {
 
             {/* Menu Items */}
             <TabsContent value={selectedCategory} className="mt-0">
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {currentItems.map((item) => (
-                  <Card key={item.id} className="group bg-gradient-to-br from-white via-slate-50/80 to-stone-50 dark:from-slate-800/90 dark:via-stone-800/80 dark:to-slate-700/90 backdrop-blur-xl border border-white/60 dark:border-slate-700/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 overflow-hidden will-change-transform cursor-pointer">
+                  <Card key={item.id} className="group bg-gradient-to-br from-white via-slate-50/80 to-stone-50 dark:from-slate-800/90 dark:via-stone-800/80 dark:to-slate-700/90 backdrop-blur-xl border border-white/60 dark:border-slate-700/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] sm:hover:scale-[1.03] hover:-translate-y-1 sm:hover:-translate-y-2 overflow-hidden will-change-transform cursor-pointer">
                     {/* Product Image */}
-                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-stone-100 to-slate-200 dark:from-stone-700 dark:to-slate-600">
+                    <div className="relative h-40 sm:h-48 overflow-hidden bg-gradient-to-br from-stone-100 to-slate-200 dark:from-stone-700 dark:to-slate-600">
                       <img 
                         src={item.image} 
                         alt={item.name}
@@ -381,90 +381,83 @@ export default function MenuPage() {
                         }}
                       />
                       {/* Fallback icon */}
-                      <div className="absolute inset-0 hidden items-center justify-center text-8xl text-stone-600 dark:text-stone-400">
+                      <div className="absolute inset-0 hidden items-center justify-center text-6xl sm:text-8xl text-stone-600 dark:text-stone-400">
                         ☕
                       </div>
                       
                       {/* Rating Badge */}
-                      <div className="absolute top-4 right-4 bg-white/95 dark:bg-stone-800/95 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                        <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                        <span className="text-xs font-bold text-stone-900 dark:text-stone-100">{item.rating}</span>
+                      <div className="absolute top-3 right-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full shadow-lg backdrop-blur-sm">
+                        <div className="flex items-center gap-1">
+                          <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
+                          <span className="text-xs sm:text-sm font-bold">{item.rating}</span>
+                        </div>
                       </div>
                       
                       {/* Badges */}
-                      <div className="absolute top-4 left-4 flex flex-col gap-2">
-                        {item.badges.slice(0, 2).map((badge, idx) => (
-                          <Badge key={idx} className="bg-white/95 dark:bg-stone-800/95 text-stone-900 dark:text-stone-100 text-xs px-3 py-1 rounded-full backdrop-blur-sm shadow-lg font-medium transform group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${idx * 100}ms` }}>
+                      <div className="absolute top-3 left-3 flex flex-col gap-1 sm:gap-2">
+                        {item.badges.map((badge, index) => (
+                          <Badge 
+                            key={index} 
+                            className="bg-gradient-to-r from-slate-900/90 to-stone-900/90 dark:from-amber-600/90 dark:to-orange-700/90 text-white backdrop-blur-sm text-xs px-2 py-1 shadow-md"
+                          >
                             {badge}
                           </Badge>
                         ))}
                       </div>
-
-                      {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     
-                    <div className="p-6 transform group-hover:translate-y-[-2px] transition-transform duration-300">
-                      {/* Item Header */}
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 mb-2 group-hover:text-stone-700 dark:group-hover:text-stone-200 transition-colors duration-300">
+                    {/* Product Info */}
+                    <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-lg sm:text-xl font-bold text-stone-900 dark:text-stone-100 mb-1 sm:mb-2 line-clamp-1">
                             {item.name}
                           </h3>
-                          <div className="flex items-center gap-4 text-sm text-stone-700 dark:text-stone-300">
-                            <div className="flex items-center gap-1 group-hover:text-stone-600 dark:group-hover:text-stone-400 transition-colors duration-300">
-                              <Clock size={14} className="text-stone-600 dark:text-stone-400" />
-                              <span>{item.preparationTime}</span>
-                            </div>
-                            <div className="px-2 py-1 bg-stone-200 dark:bg-stone-700 rounded-md text-xs font-medium text-stone-800 dark:text-stone-200 group-hover:bg-stone-300 dark:group-hover:bg-stone-600 transition-colors duration-300">
-                              {item.category}
-                            </div>
-                          </div>
+                          <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 line-clamp-2 leading-relaxed">
+                            {item.description}
+                          </p>
                         </div>
-                        <div className="text-right">
-                          <div className="text-2xl font-black text-stone-900 dark:text-stone-100 group-hover:scale-105 transition-transform duration-300">{item.price}</div>
-                          {item.originalPrice && (
-                            <div className="text-sm text-stone-600 dark:text-stone-400 line-through">{item.originalPrice}</div>
-                          )}
+                        <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                          <span className="text-xl sm:text-2xl font-black text-stone-900 dark:text-stone-100">
+                            {item.price}
+                          </span>
+                          <span className="text-xs sm:text-sm text-stone-500 dark:text-stone-500 line-through">
+                            {item.originalPrice}
+                          </span>
                         </div>
                       </div>
-
-                      {/* Description */}
-                      <p className="text-stone-800 dark:text-stone-200 mb-4 leading-relaxed font-medium group-hover:text-stone-700 dark:group-hover:text-stone-300 transition-colors duration-300">{item.description}</p>
-
+                      
+                      {/* Meta Info */}
+                      <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-stone-500 dark:text-stone-400">
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <span>{item.preparationTime}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Coffee className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <span>{item.category}</span>
+                        </div>
+                      </div>
+                      
                       {/* Customizations */}
-                      {item.customizations && (
-                        <div className="mb-4">
-                          <p className="text-xs text-stone-700 dark:text-stone-300 mb-2 font-medium">Customizable:</p>
-                          <div className="flex flex-wrap gap-1">
-                            {item.customizations.map((customization, idx) => (
-                              <Badge key={idx} variant="outline" className="text-xs px-2 py-1 bg-green-50 dark:bg-green-900/30 text-green-800 dark:text-green-200 border-green-300 dark:border-green-700 font-medium hover:bg-green-100 dark:hover:bg-green-900/50 transition-colors duration-200">
-                                {customization}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {item.allergens && (
-                        <div className="mb-4">
-                          <p className="text-xs text-stone-700 dark:text-stone-300 mb-2 font-medium">Contains:</p>
-                          <div className="flex flex-wrap gap-1">
-                            {item.allergens.map((allergen, idx) => (
-                              <Badge key={idx} variant="secondary" className="text-xs px-2 py-1 bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800 font-medium">
-                                {allergen}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
+                        {item.customizations.slice(0, 3).map((customization, index) => (
+                          <Badge 
+                            key={index} 
+                            variant="outline" 
+                            className="text-xs px-2 py-1 bg-gradient-to-r from-stone-50 to-slate-50 dark:from-stone-800 dark:to-slate-800 text-stone-600 dark:text-stone-400 border-stone-200 dark:border-stone-700"
+                          >
+                            {customization}
+                          </Badge>
+                        ))}
+                      </div>
                       
                       {/* Order Button */}
-                      <Button className="w-full bg-gradient-to-r from-slate-900 via-stone-900 to-slate-800 hover:from-slate-800 hover:via-stone-800 hover:to-slate-700 dark:from-amber-600 dark:via-orange-700 dark:to-amber-600 dark:hover:from-amber-700 dark:hover:via-orange-800 dark:hover:to-amber-700 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 group/btn will-change-transform">
-                        <Link to="/order" prefetch="intent" className="flex items-center justify-center gap-2">
-                          <span className="group-hover/btn:rotate-12 transition-transform duration-200 will-change-transform">🛒</span>
-                          <span>Add to Order</span>
-                        </Link>
+                      <Button 
+                        size="sm" 
+                        className="w-full bg-gradient-to-r from-slate-900 via-stone-900 to-slate-800 hover:from-slate-800 hover:via-stone-800 hover:to-slate-700 dark:from-amber-600 dark:via-orange-700 dark:to-amber-600 dark:hover:from-amber-700 dark:hover:via-orange-800 dark:hover:to-amber-700 text-white font-semibold transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl will-change-transform"
+                      >
+                        <span className="text-sm sm:text-base">Add to Cart</span>
                       </Button>
                     </div>
                   </Card>
@@ -475,23 +468,29 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-6 max-w-5xl text-center">
-          <div className="bg-gradient-to-br from-white via-slate-50/90 to-stone-50 dark:from-slate-800/90 dark:via-stone-800/80 dark:to-slate-700/90 backdrop-blur-xl p-12 rounded-3xl shadow-lg border border-white/60 dark:border-slate-700/50">
-            <div className="text-5xl mb-6">🎉</div>
-            <h2 className="text-4xl font-black mb-6 bg-gradient-to-br from-slate-900 via-stone-800 to-slate-900 dark:from-amber-200 dark:via-orange-100 dark:to-amber-200 bg-clip-text text-transparent">
+      {/* Call to Action */}
+      <section className="py-12 sm:py-16 lg:py-20 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+          <div className="bg-gradient-to-br from-white via-slate-50/90 to-stone-50 dark:from-slate-800/90 dark:via-stone-800/80 dark:to-slate-700/90 backdrop-blur-xl p-8 sm:p-10 lg:p-12 rounded-3xl shadow-lg border border-white/60 dark:border-slate-700/50">
+            <div className="text-4xl sm:text-5xl mb-4 sm:mb-6">🎉</div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 bg-gradient-to-br from-slate-900 via-stone-800 to-slate-900 dark:from-amber-200 dark:via-orange-100 dark:to-amber-200 bg-clip-text text-transparent">
               Ready to Order?
             </h2>
-            <p className="text-xl text-stone-600 dark:text-stone-300 mb-8">
+            <p className="text-lg sm:text-xl text-stone-600 dark:text-stone-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
               Order ahead for pickup or enjoy in our cozy café space
             </p>
-            <div className="flex gap-6 justify-center flex-wrap">
-              <Button size="lg" className="bg-gradient-to-r from-slate-900 via-stone-900 to-slate-800 hover:from-slate-800 hover:via-stone-800 hover:to-slate-700 dark:from-amber-600 dark:via-orange-700 dark:to-amber-600 dark:hover:from-amber-700 dark:hover:via-orange-800 dark:hover:to-amber-700 text-white px-12 py-4 text-xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 will-change-transform">
-                <Link to="/order" prefetch="intent">🚀 Order Now</Link>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+              <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-slate-900 via-stone-900 to-slate-800 hover:from-slate-800 hover:via-stone-800 hover:to-slate-700 dark:from-amber-600 dark:via-orange-700 dark:to-amber-600 dark:hover:from-amber-700 dark:hover:via-orange-800 dark:hover:to-amber-700 text-white px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 will-change-transform">
+                <Link to="/order" prefetch="intent" className="flex items-center justify-center gap-2">
+                  <span>🚀</span>
+                  <span>Order Now</span>
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-stone-300 dark:border-amber-600 bg-gradient-to-r from-stone-100/50 to-slate-100/50 dark:from-stone-800/50 dark:to-slate-800/50 hover:from-stone-200 hover:to-slate-200 dark:hover:from-stone-700 dark:hover:to-slate-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 px-12 py-4 text-xl font-bold rounded-full transition-all duration-200 hover:scale-105 backdrop-blur-sm will-change-transform">
-                <Link to="/visit" prefetch="intent">📍 Visit Us</Link>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-stone-300 dark:border-amber-600 bg-gradient-to-r from-stone-100/50 to-slate-100/50 dark:from-stone-800/50 dark:to-slate-800/50 hover:from-stone-200 hover:to-slate-200 dark:hover:from-stone-700 dark:hover:to-slate-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl font-bold rounded-full transition-all duration-200 hover:scale-105 backdrop-blur-sm will-change-transform">
+                <Link to="/visit" prefetch="intent" className="flex items-center justify-center gap-2">
+                  <span>📍</span>
+                  <span>Visit Us</span>
+                </Link>
               </Button>
             </div>
           </div>
