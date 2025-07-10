@@ -1,85 +1,145 @@
 import { Button } from "~/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Clock, Users, Award } from "lucide-react";
 import { Link } from "react-router";
+import { Badge } from "~/components/ui/badge";
 
 export default function ContentSection() {
   return (
-    <section id="content" className="py-16 md:py-32 relative">
-      {/* Coffee Steam Animation */}
-      <div className="absolute top-20 right-10 opacity-20 dark:opacity-30">
-        <div className="animate-pulse">
-          <div className="text-6xl">☕</div>
-          <div className="text-sm mt-2 text-center">💨</div>
-        </div>
-      </div>
+    <section id="content" className="py-20 md:py-32 relative overflow-hidden">
+      {/* Subtle Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/30 via-white/20 to-stone-50/30 dark:from-stone-800/20 dark:via-stone-700/20 dark:to-stone-800/20"></div>
       
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="grid gap-6 md:grid-cols-2 md:gap-12">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-medium">
-              🌱 Single-origin, expertly roasted.
-            </h2>
-            
-            {/* Coffee Origin Visual */}
-            <div className="flex gap-2 my-6">
-              <div className="flex items-center gap-2 bg-green-100 dark:bg-green-900/20 px-3 py-1 rounded-full text-sm">
-                <span>🇪🇹</span>
-                <span>Ethiopia</span>
-              </div>
-              <div className="flex items-center gap-2 bg-yellow-100 dark:bg-yellow-900/20 px-3 py-1 rounded-full text-sm">
-                <span>🇨🇴</span>
-                <span>Colombia</span>
-              </div>
-              <div className="flex items-center gap-2 bg-blue-100 dark:bg-blue-900/20 px-3 py-1 rounded-full text-sm">
-                <span>🇬🇹</span>
-                <span>Guatemala</span>
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <Badge className="bg-gradient-to-r from-slate-800 to-stone-900 dark:from-slate-100 dark:to-stone-50 text-white dark:text-stone-900 px-6 py-2 mb-8 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+            <span className="mr-2">🔥</span>
+            <span>Limited Time: Grand Opening Celebration</span>
+          </Badge>
+          
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
+            Why{' '}
+            <span className="bg-gradient-to-br from-slate-800 via-stone-700 to-slate-800 dark:from-slate-200 dark:via-stone-100 dark:to-slate-200 bg-clip-text text-transparent">
+              2,500+ Coffee Lovers
+            </span>{' '}
+            Choose Us
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-stone-600 dark:text-stone-400 max-w-4xl mx-auto font-light">
+            Don't settle for mediocre coffee. Experience the difference that authentic craftsmanship makes.
+          </p>
+        </div>
+        
+        <div className="grid gap-8 lg:grid-cols-3 mb-16">
+          {/* Value Prop Cards */}
+          <div className="group bg-gradient-to-br from-white via-slate-50/80 to-stone-50 dark:from-stone-800/90 dark:via-stone-700/80 dark:to-stone-800/90 backdrop-blur-xl p-8 rounded-3xl border border-white/60 dark:border-stone-700/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2">
+            <div className="flex items-start gap-6">
+              <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🌍</div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-stone-900 to-slate-800 dark:from-stone-100 dark:to-slate-200 bg-clip-text text-transparent">Direct Trade</h3>
+                <p className="text-stone-700 dark:text-stone-300 leading-relaxed">
+                  We work directly with <strong>15+ small farms</strong> across Ethiopia, Colombia, and Guatemala. Every cup supports sustainable farming.
+                </p>
               </div>
             </div>
           </div>
-          
-          <div className="space-y-6">
-            <p className="flex items-start gap-2">
-              <span className="text-xl">🌍</span>
-              <span>Sourced directly from small farms around the world - because great coffee starts with great relationships.</span>
-            </p>
-            <p className="flex items-start gap-2">
-              <span className="text-xl">🔥</span>
-              <span>Every bean is carefully selected and roasted <em>in-house</em> to bring out its unique flavor profile. From the bright acidity of Ethiopian highlands to the rich body of Colombian mountains.</span>
-            </p>
-            <p className="flex items-start gap-2">
-              <span className="text-xl">👨‍🍳</span>
-              <span>Our master roasters have over <span className="font-bold">15 years</span> of experience crafting the perfect roast for each origin. Light, medium, or dark—we know exactly how to unlock each bean's potential.</span>
-            </p>
 
-            <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg border border-amber-200 dark:border-amber-700">
-              <p className="flex items-start gap-2">
-                <span className="text-xl">☕</span>
-                <span className="italic">"That perfect moment when the aroma hits you and you know it's going to be an amazing day." - Every coffee lover ever</span>
-              </p>
+          <div className="group bg-gradient-to-br from-white via-slate-50/80 to-stone-50 dark:from-stone-800/90 dark:via-stone-700/80 dark:to-stone-800/90 backdrop-blur-xl p-8 rounded-3xl border border-white/60 dark:border-stone-700/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2">
+            <div className="flex items-start gap-6">
+              <div className="text-5xl group-hover:scale-110 transition-transform duration-300">👨‍🍳</div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-stone-900 to-slate-800 dark:from-stone-100 dark:to-slate-200 bg-clip-text text-transparent">Master Roaster</h3>
+                <p className="text-stone-700 dark:text-stone-300 leading-relaxed">
+                  Our head roaster has <strong>15+ years perfecting the craft</strong>. Each origin is roasted to unlock its unique flavor profile.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <p className="flex items-start gap-2">
-              <span className="text-xl">💫</span>
-              <span>Whether you prefer a delicate pour-over that highlights subtle notes, or a bold espresso that energizes your morning, our baristas create each cup with precision and passion.</span>
-            </p>
+          <div className="group bg-gradient-to-br from-white via-slate-50/80 to-stone-50 dark:from-stone-800/90 dark:via-stone-700/80 dark:to-stone-800/90 backdrop-blur-xl p-8 rounded-3xl border border-white/60 dark:border-stone-700/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2">
+            <div className="flex items-start gap-6">
+              <div className="text-5xl group-hover:scale-110 transition-transform duration-300">💻</div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-stone-900 to-slate-800 dark:from-stone-100 dark:to-slate-200 bg-clip-text text-transparent">Perfect Workspace</h3>
+                <p className="text-stone-700 dark:text-stone-300 leading-relaxed">
+                  <strong>150+ remote workers choose us daily.</strong> Lightning-fast WiFi, comfortable seating, perfect productivity vibes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <p className="text-center p-4 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg">
-              <span className="font-bold text-lg">☕ One passion, one craft. ☕</span><br/>
-              <span className="text-sm">Every cup tells a story.</span>
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Stats Dashboard */}
+          <div className="bg-gradient-to-br from-white via-slate-50/90 to-stone-50 dark:from-stone-800/95 dark:via-stone-700/90 dark:to-stone-800/95 backdrop-blur-xl p-8 rounded-3xl shadow-lg border border-white/60 dark:border-stone-700/50 hover:shadow-xl transition-all duration-500">
+            <div className="text-center mb-8">
+              <div className="text-5xl mb-4">📊</div>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-stone-900 to-slate-800 dark:from-stone-100 dark:to-slate-200 bg-clip-text text-transparent">The Numbers Don't Lie</h3>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-stone-100 dark:from-stone-700/60 dark:to-stone-600/60 rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer shadow-sm hover:shadow-md">
+                <div className="text-4xl font-black bg-gradient-to-r from-stone-700 to-slate-600 dark:from-stone-300 dark:to-slate-400 bg-clip-text text-transparent mb-2">500+</div>
+                <div className="text-sm font-medium text-stone-600 dark:text-stone-400">Cups Daily</div>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-stone-100 dark:from-stone-700/60 dark:to-stone-600/60 rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer shadow-sm hover:shadow-md">
+                <div className="text-4xl font-black bg-gradient-to-r from-stone-700 to-slate-600 dark:from-stone-300 dark:to-slate-400 bg-clip-text text-transparent mb-2">4.9★</div>
+                <div className="text-sm font-medium text-stone-600 dark:text-stone-400">Rating</div>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-stone-100 dark:from-stone-700/60 dark:to-stone-600/60 rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer shadow-sm hover:shadow-md">
+                <div className="text-4xl font-black bg-gradient-to-r from-stone-700 to-slate-600 dark:from-stone-300 dark:to-slate-400 bg-clip-text text-transparent mb-2">85%</div>
+                <div className="text-sm font-medium text-stone-600 dark:text-stone-400">Return Rate</div>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-stone-100 dark:from-stone-700/60 dark:to-stone-600/60 rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer shadow-sm hover:shadow-md">
+                <div className="text-4xl font-black bg-gradient-to-r from-stone-700 to-slate-600 dark:from-stone-300 dark:to-slate-400 bg-clip-text text-transparent mb-2">2,500+</div>
+                <div className="text-sm font-medium text-stone-600 dark:text-stone-400">Members</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Urgency CTA */}
+          <div className="bg-gradient-to-br from-slate-50 via-white to-stone-50 dark:from-stone-800/90 dark:via-stone-700/80 dark:to-stone-800/90 p-10 rounded-3xl border border-white/60 dark:border-stone-700/50 text-center shadow-lg hover:shadow-xl transition-all duration-500 backdrop-blur-sm">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Clock className="text-stone-600 dark:text-stone-400" size={32} />
+              <span className="text-2xl font-black bg-gradient-to-r from-stone-800 to-slate-700 dark:from-stone-200 dark:to-slate-300 bg-clip-text text-transparent">Limited Time!</span>
+            </div>
+            
+            <h3 className="text-4xl font-black mb-6 bg-gradient-to-br from-stone-900 via-slate-800 to-stone-900 dark:from-stone-100 dark:via-slate-100 dark:to-stone-100 bg-clip-text text-transparent">
+              Grand Opening Special
+            </h3>
+            
+            <p className="text-xl text-stone-700 dark:text-stone-300 mb-8 leading-relaxed">
+              First 100 customers get <strong>20% off their entire first week</strong> + free premium pastry. Don't miss out!
             </p>
             
-            <Button
-              asChild
-              variant="secondary"
-              size="sm"
-              className="gap-1 pr-1.5"
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-slate-900 via-stone-900 to-slate-800 hover:from-slate-800 hover:via-stone-800 hover:to-slate-700 dark:from-slate-100 dark:via-stone-50 dark:to-slate-100 dark:hover:from-white dark:hover:via-slate-50 dark:hover:to-white text-white dark:text-stone-900 px-12 py-4 text-xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group mb-4"
             >
-              <Link to="/our-story">
-                <span>📖 Learn About Our Coffee Journey</span>
-                <ChevronRight className="size-2" />
+              <Link to="/claim-offer" className="flex items-center gap-3">
+                <span className="group-hover:rotate-12 transition-transform duration-300">→</span>
+                <span>Claim Your Spot Now</span>
               </Link>
             </Button>
+            
+            <p className="text-sm text-stone-500 dark:text-stone-400">
+              ⏰ Offer expires in 5 days - Only 23 spots left!
+            </p>
           </div>
+        </div>
+
+        {/* Final CTA */}
+        <div className="text-center mt-16">
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-to-r from-slate-900 via-stone-900 to-slate-800 hover:from-slate-800 hover:via-stone-800 hover:to-slate-700 dark:from-slate-100 dark:via-stone-50 dark:to-slate-100 dark:hover:from-white dark:hover:via-slate-50 dark:hover:to-white text-white dark:text-stone-900 px-12 py-4 text-xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+          >
+            <Link to="/our-story" className="flex items-center gap-3">
+              <span className="group-hover:rotate-12 transition-transform duration-300">📖</span>
+              <span>Discover Our Coffee Journey</span>
+              <ChevronRight className="group-hover:translate-x-1 transition-transform duration-300" size={24} />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
